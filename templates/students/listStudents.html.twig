@@ -1,0 +1,44 @@
+{% extends 'forms.html.twig' %}
+ 
+
+
+
+{% block title %}Students Results Here{% endblock %}
+
+{% block body %}
+  <p class="pl-2 d-inline font-weight-bold" style="color: #444;"> Students Results Here</p>
+<div class="container-fluid border col-4 center v-center" >
+        <div class="row">
+            <table id="students" class="table">
+                <thread>
+                    <tr>
+                    <th scope="col">ID</th>
+                        <th scope="col text-center">Name</th>
+                         <th scope="col">Age</th>
+                        
+                         
+                        
+                    </tr>
+                </thread>
+                {% for student in students %}
+                <tr>
+                    <th> {{ student.ID}}</th>    
+                    <th> {{ student.name}}</th>    
+                     <th> {{ student.age}}</th>  
+                    <th> <a href="#" class="btn btn-danger delete-student" data-id="{{ student.ID}}"> Delete  </th>
+
+                    
+                       <th> <a href="{{ path('student_edit', {
+                            id: student.id
+                        }) }}" class="btn btn-light " data-id="{{ student.ID}}"> Edit </th>
+                </tr>
+                 {% endfor %}
+              
+            </table>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+<script src="/js/main.js"> </script>
+
+{% endblock %}

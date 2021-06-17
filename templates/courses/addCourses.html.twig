@@ -1,0 +1,14 @@
+{% extends 'forms.html.twig' %}
+{%  form_theme coursesForm 'bootstrap_4_layout.html.twig'  %}
+
+
+
+{% block title %}add Courses here!{% endblock %}
+
+{% block body %}
+<h1 class="font-weight-bold" style="color: #444;" >  Add </h1>
+{{ form_start(coursesForm)}}
+{{ form_widget(coursesForm)}}
+<button type="submit" class="btn btn-primary"> Add </button>
+{{ form_end(coursesForm)}}
+{% endblock %}

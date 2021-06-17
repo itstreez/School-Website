@@ -1,0 +1,14 @@
+{% extends 'forms.html.twig' %}
+{%  form_theme stedit 'bootstrap_4_layout.html.twig'  %}
+
+
+
+{% block title %}Edit Students here!{% endblock %}
+
+{% block body %}
+<h1 class="font-weight-bold" style="color: #444;" >  Edit students </h1>
+{{ form_start(stedit)}}
+{{ form_widget(stedit)}}
+<button type="submit" class="btn btn-primary"> Edit</button>
+{{ form_end(stedit)}}
+{% endblock %}

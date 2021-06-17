@@ -1,0 +1,42 @@
+{% extends 'forms.html.twig' %}
+
+
+
+
+{% block title %}Classes Results Here{% endblock %}
+
+{% block body %}
+<div class="container-fluid border col-4 center v-center" >
+        <div class="row">
+            <table id="classes" class="table">
+                <thread>
+                    <tr>
+                    <th scope="col">ID</th>
+                        <th scope="col text-center">Sections</th>
+                         
+                        
+                    </tr>
+                </thread>
+                {% for class in classes %}
+                <tr>
+                    <th> {{ class.ID}}</th>    
+                    <th> {{ class.section}}</th>    
+                    <th> <a href="#" class="btn btn-danger delete-classes" data-id="{{ class.ID }}"> Delete  </th>
+
+                    
+                       <th> <a href="{{ path('classes_edit', {
+                            id:  class.ID  
+                        }) }}" class="btn btn-light " data-id="{{ class.ID}}"> Edit </th>
+                    
+                </tr>
+                 {% endfor %}
+              
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+<script src="/js/main.js"> </script>
+
+{% endblock %}
